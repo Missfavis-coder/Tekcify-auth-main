@@ -1,10 +1,10 @@
 "use client";
 
-import LoginButton from "../../components/buttons/loginButton";
+import LoginButton from "@/components/buttons/loginButton";
 import { useAuth } from "../../../authContexts/context";
 import Link from "next/link";
 import Image from "next/image";
-import Asset4 from "../../../assets/login-bg.jpg";
+
 
 export default function LogIn() {
   const {
@@ -118,9 +118,9 @@ export default function LogIn() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/80 z-[1]" />
           <Image
-            src={Asset4}
+            src="/images/login-bg.jpg"
             alt="Signup Background"
-            fill
+             fill
             className="object-cover"
             priority
           />

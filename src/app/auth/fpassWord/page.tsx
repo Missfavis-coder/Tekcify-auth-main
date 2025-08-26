@@ -1,10 +1,9 @@
 "use client"
-import { useAuth } from "../../../authContexts/context";
-import PasswordStrength from "../../../utils/passwordStrength";
+import { useAuth } from "@/authContexts/context";
+import PasswordStrength from "@/utils/passwordStrength";
 import Image from "next/image";
-import Asset1 from "../../../assets/favicon.png";
 import Link from "next/link";
-import ResetButton from "../../components/buttons/resetButton";
+import ResetButton from "@/components/buttons/resetButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 export default function ForgotPwd() {
@@ -36,7 +35,7 @@ export default function ForgotPwd() {
             <div className="mb-12">
                 <Image
                 alt="#"
-                src={Asset1}
+                src="/images/favicon.png"
                 width={80}
                 height={80}
                  />

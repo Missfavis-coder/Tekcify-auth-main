@@ -1,7 +1,7 @@
 "use client";
-import validateSignup from "../../../utils/validateSignup";
-import { useAuth } from "../../../authContexts/context";
-import { getPassedRules } from "../../../utils/authConfig";
+import validateSignup from "@/utils/validateSignup";
+import { useAuth } from "@/authContexts/context";
+import { getPassedRules } from "@/utils/authConfig";
 
 
 const SignupButton = () => {

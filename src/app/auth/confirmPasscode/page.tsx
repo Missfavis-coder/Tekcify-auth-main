@@ -1,5 +1,5 @@
 "use client"
-import Logo from "../../../assets/favicon.png"
+
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image"
@@ -76,7 +76,7 @@ export default function ConfirmPasscode(){
         <div className=" flex flex-col h-screen justify-center items-center ">
             <div className="mb-6">
                 <Image
-                src={Logo}
+                src="/images/favicon.png"
                 alt="#"
                 width={70}
                 height={70}

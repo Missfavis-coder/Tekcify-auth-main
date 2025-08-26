@@ -1,8 +1,7 @@
 "use client"
-import { useAuth } from "../../../authContexts/context";
-import validateLogin from "../../../utils/validatelogin";
+import { useAuth } from "@/authContexts/context"
+import validateLogin from "@/utils/validatelogin";
 import Image from "next/image";
-import Asset2 from "../../../assets/favicon.ico";
 import { useRouter } from "next/navigation";
 
 export default function LoginButton() {
@@ -20,7 +19,7 @@ export default function LoginButton() {
 
      if (Object.keys(validateErrors).length === 0) {
       //Redirect to Confirm passcode page
-       router.push("/auth/confirmPwd")
+       router.push("/auth/confirmPasscode")
       console.log("Login successful");
       const code = {
         email: formData.email,
@@ -44,7 +43,7 @@ export default function LoginButton() {
      <p>Login with Tekcify</p>
       <div className=" ">
           <Image
-          src={Asset2}
+          src="/images/favicon.ico"
           alt="#"
           width={20}
           height={20}

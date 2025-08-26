@@ -1,12 +1,11 @@
 "use client";
 
-import SignupButton from "../../components/buttons/signupButton";
-import { useAuth } from "../../../authContexts/context";
+import SignupButton from "@/components/buttons/signupButton";
+import { useAuth } from "@/authContexts/context";
 import { useState } from "react";
-import PasswordStrength from "../../../utils/passwordStrength";
+import PasswordStrength from "@/utils/passwordStrength";
 import Link from "next/link";
 import  Image from "next/image"
-import Asset5 from "../../../assets/signup-bg.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 
@@ -202,7 +201,7 @@ export default function SignUp() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/80 z-[1]" />
           <Image
-            src={Asset5}
+            src="/images/signup-bg.jpg"
             alt="Signup Background"
             fill
             className="object-cover"
