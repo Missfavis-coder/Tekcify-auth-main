@@ -4,15 +4,20 @@ import LoginButton from "@/components/buttons/loginButton";
 import { useAuth } from "../../../authContexts/context";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons/faEyeSlash";
+import { faEye } from "@fortawesome/free-solid-svg-icons/faEye";
 
 
 export default function LogIn() {
   const {
     setFormData,
     errors,
-    formData
+    formData,
+    
   } = useAuth();
-  
+  const [showPassword, setShowPassword] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -23,11 +28,11 @@ export default function LogIn() {
   
   
   return (
-     <div className="h-screen  flex justify-center px-6 py-8">
+     <div className="h-screen  flex justify-center items-center px-4  py-8">
          <div className=" flex items-center w-full  p-8"> 
           {/**Right column features */}
           <div className="bg-red w-full lg:w-1/2 flex items-center justify-center ">
-          <form className="max-w-4xl p-6">
+          <form className="px-2">
           {/* Header */}
           <div>
             <p className="lg:text-3xl w-[350px] lg:w-[350px] md:text-3xl text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent tracking-wide text-center ">
@@ -40,25 +45,8 @@ export default function LogIn() {
           {/*  Input Fields */}
           <div className="flex flex-col mt-6">
 
-            <div className="mb-2">
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Username
-              </label>
-              <input
-                value={formData.username}
-                onChange={handleChange}
-                type="text"
-                name="username"
-                className={`w-full px-4 py-3 text-black bg-white border-gray-300 border rounded-xl outline-none focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors ${errors.username && "outline-none ring-2 ring-red-500 transition-colors"} `}
-                placeholder="BigJ"
-              />
-              {errors.username && (
-                <p className="mt-1 text-xs text-red-500">{errors.username}</p>
-              )}
-            </div>
-
             {/* Email */}
-            <div className="mb-2">
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Email
               </label>
@@ -75,18 +63,25 @@ export default function LogIn() {
             </div>
 
             {/* Password */}
-            <div className="mb-2">
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Password
               </label>
+              <div className="relative">
               <input
                 value={formData.password}
                 onChange={handleChange}
-                type="password"
+                type={showPassword? "text" : "password"}
                 name="password"
                 className={`w-full px-4 py-3 text-black bg-white border-gray-300 border rounded-xl outline-none focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors ${errors.password && "outline-none ring-2 ring-red-500 transition-colors"} `}
                 placeholder="••••••••"
               />
+                <FontAwesomeIcon
+                   icon={showPassword ? faEyeSlash : faEye}
+                   onClick={() => setShowPassword((prev) => !prev)}
+                   className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer"
+                />
+              </div>
               {errors.password && (
                 <p className="mt-1 text-xs text-red-500">{errors.password}</p>
               )}  

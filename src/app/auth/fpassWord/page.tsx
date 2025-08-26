@@ -23,7 +23,7 @@ export default function ForgotPwd() {
         }));
       };
     return(
-        <div className="flex flex-col justify-between h-screen max-w-4xl mx-auto md:py-8 py-4 px-4">
+        <div className="flex flex-col justify-between h-screen max-w-4xl mx-auto md:py-8 py-4 md:px-6 px-6">
         <div className=" lg:px-10 mt-6 cursor-pointer">
             <div className="bg-purple-700 w-8 h-8 rounded-md  text-white font-bold flex items-center justify-center cursor-pointer">
             <Link href="/auth/logIn">
@@ -40,7 +40,7 @@ export default function ForgotPwd() {
                 height={80}
                  />
             </div>
-            <div className="w-[350px]" >
+            <div className="w-[320px]" >
             <div>
                 <div className="text-sm text-gray-400 mb-3">Reset your password</div>
                 <input

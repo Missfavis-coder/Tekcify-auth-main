@@ -197,7 +197,7 @@ export default function SignUp() {
         </div>
 
         {/**Right features column*/}
-        <div className="hidden lg:block w-1/2 fixed top-0 right-0 h-screen">
+        <div className="hidden lg:block w-1/2 fixed top-0 right-0 h-screen py-15">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/80 z-[1]" />
           <Image

@@ -65,8 +65,8 @@ export default function ConfirmPasscode(){
         }
     }
     return(
-        <div className="lg:px-2 px-4 pt-8 h-screen">
-        <div className=" lg:px-10 mt-6 cursor-pointer">
+        <div className="lg:px-2 px-6 pt-8 h-screen">
+        <div className=" lg:px-10 md:mt-6 cursor-pointer">
             <div className="bg-purple-700 w-8 h-8 rounded-md  text-white font-bold flex items-center justify-center cursor-pointer">
             <Link href="/auth/logIn">
                <FontAwesomeIcon className="text-sm" icon={faArrowLeft}/>
@@ -83,8 +83,8 @@ export default function ConfirmPasscode(){
                 />
             </div>
             <div className="flex flex-col justify-center items-center">
-                    <h1 className="font-bold text-2xl text-center mb-2">Check Your Email</h1>
-                    <p className="text-sm"> We have sent a passcode to /*userEmail.{""} Please enter it below: </p>
+                    <h1 className="font-bold text-2xl text-center mb-3">Check Your Email</h1>
+                    <p className="text-sm"> We have sent a passcode to your email.{""} Please enter it below: </p>
                      <div className="flex justify-between my-8">
                         {otp.map((digit, index) => {
                             return (

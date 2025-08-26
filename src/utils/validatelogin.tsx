@@ -12,9 +12,7 @@ export default function validateLogin(formData: FormData): FormErrors {
   if (!formData.password || formData.password.trim() === "" ) {
     newErrors.password = "Enter your password";
   } 
-  if (!formData.username || formData.username.trim() === "") {
-    newErrors.username = "Enter your username";
-  } 
+  
 
 
   return newErrors;

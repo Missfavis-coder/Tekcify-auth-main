@@ -6,7 +6,7 @@ import { getPassedRules } from "@/utils/authConfig";
 
 const SignupButton = () => {
   
-  const { setErrors, formData, passwordChecks , resetForm } = useAuth();
+  const { setErrors, formData, passwordChecks , resetForm, setSuccessMessage } = useAuth();
   const passedRules = getPassedRules(passwordChecks);
   const strongEnough = passedRules >= 5;
 
@@ -33,9 +33,9 @@ const SignupButton = () => {
       return;
     }
     resetForm(true)
-    // Everything passed
-   
-    alert("You have successfully signed up.");
+    //if Everything passed
+    await new Promise(res => setTimeout(res, 500))
+    setSuccessMessage("Registration successful ! Welcome to Tekcify!")
     console.log("Form submitted successfully!");
   };
 

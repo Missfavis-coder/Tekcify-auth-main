@@ -18,7 +18,10 @@ type authContextType = {
     setPasswordFocus: Dispatch<SetStateAction<boolean>>;
     passwordChecks:Passwordchecks
     setPasswordChecks: Dispatch<SetStateAction<Passwordchecks>>;
-    resetForm: (partial?: boolean) => void
+    resetForm: (partial?: boolean) => void;
+    successMessage:string | null;
+    setSuccessMessage: (msg: string) => void;
+    clearSuccessMessage: () =>  void;
   };
     
 
@@ -43,7 +46,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       number: false,
       special: false,
   });
+    const [successMessage, setSuccessMessageState]= useState<string | null>(null);
 
+    // reset Form after submission.
   const resetForm =(partial: boolean = false) => {
     if (partial) {
       setFormData((prev) => ({
@@ -65,7 +70,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
     setErrors({});
   }
-  
+  //For every successful sign up regsitration, there will be a success toast message.
+  const setSuccessMessage = (msg: string) =>{
+    setSuccessMessageState(msg);
+
+    setTimeout(() =>setSuccessMessageState(null), 3000 )
+  }
+
+  const clearSuccessMessage = () => setSuccessMessageState(null);
+
 
   useEffect(() => {
     const pwd = formData.password
@@ -104,7 +117,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <AuthContext.Provider
-      value={{errors, setErrors,resetForm, formData, setFormData, passwordChecks, passwordFocus, setPasswordChecks, setPasswordFocus  }}
+      value={{errors,setSuccessMessage, successMessage, clearSuccessMessage, setErrors,resetForm, formData, setFormData, passwordChecks, passwordFocus, setPasswordChecks, setPasswordFocus  }}
     >
     {children}
     </AuthContext.Provider>
