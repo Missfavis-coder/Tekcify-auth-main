@@ -92,8 +92,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       } else {
         // Clear password error if all rules pass
         setErrors((prev) => {
-          const { , ...rest } = prev;
+          const { password, ...rest } = prev;
+          console.log(password)
           return rest;
+          
         });
       }
     } 
