@@ -94,7 +94,7 @@ export default function ConfirmPasscode(){
                                 ref={((el) => {(inputRefs.current[index] = el)})}
                                 maxLength={1}
                                 value={digit}
-                                onChange={(e) => handleChange(e.target.value, index)}
+                                onChange={(e) => handleChange(e.target.value.trim(), index)}
                                 onKeyDown={(e) => handleKeyDown(e, index)}
                                 className={`w-12 h-12 not-first:ml-2 border border-gray-400 text-purple-700 text-center text-xl rounded-md outline-none focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors ${otp[index] ? "border-purple-700": "border-gray-400"} `}
                                 />
